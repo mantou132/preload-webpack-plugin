@@ -86,7 +86,7 @@ class PreloadPlugin {
             // If preload isn't specified, the only other valid entry is prefetch here
             // You could specify preconnect but as we're dealing with direct paths to resources
             // instead of origins that would make less sense.
-            filesToInclude+= `<link rel="${options.rel}" href="${entry}">\n`;
+            filesToInclude+= `<link rel="${options.rel}" class="dynamic" data-href="/${entry}">\n`;
           }
         });
         if (htmlPluginData.html.indexOf('</head>') !== -1) {
